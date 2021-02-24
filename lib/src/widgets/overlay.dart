@@ -771,7 +771,18 @@ class _Background extends StatelessWidget {
         width: constraints.biggest.width,
         height: constraints.biggest.height,
         decoration: BoxDecoration(
-            shape: BoxShape.circle, color: color.withOpacity(opacity)),
+          shape: BoxShape.circle,
+          color: color.withOpacity(opacity),
+          boxShadow: [
+            BoxShadow(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.black38
+                    : Colors.black12,
+                offset: const Offset(-2, -2),
+                blurRadius: 2,
+                spreadRadius: 1)
+          ],
+        ),
       ),
     );
 
